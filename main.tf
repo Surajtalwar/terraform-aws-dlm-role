@@ -37,3 +37,37 @@ resource "aws_iam_role_policy_attachment" "ami" {
   role       = aws_iam_role.this.id
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSDataLifecycleManagerServiceRoleForAMIManagement"
 }
+
+resource "aws_dlm_lifecycle_policy" "test_lifecyclerole" {
+  description        = "DLM lifecycle policy"
+  execution_role_arn = "${aws_iam_role.this.arn}"
+  state              = "ENABLED"
+
+  policy_details {
+    resource_types = ["VOLUME"]
+
+    schedule {
+      name = "2 weeks of daily snapshots"
+
+      create_rule {
+        interval      = 24
+        interval_unit = "HOURS"
+        times         = ["23:45"]
+      }
+
+      retain_rule {
+        count = 5
+      }
+
+      tags_to_add = {
+        SnapshotCreator = "DLM"
+      }
+
+      copy_tags = false
+    }
+
+    target_tags = {
+      Snapshot = "true"
+    }
+  }
+}
