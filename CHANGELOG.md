@@ -1,5 +1,12 @@
 
 
+## [1.3.0](https://github.com-personal/Surajtalwar/terraform-aws-dlm-role/compare/1.2.1...1.3.0) (2023-06-24)
+
+
+### Features
+
+* adding-spacelift-CI/CD ([ee33e98](https://github.com-personal/Surajtalwar/terraform-aws-dlm-role/commit/ee33e988a7edac542f11cbd32fb3a64c935d5a43))
+
 ## [1.2.1](https://github.com-personal/Surajtalwar/terraform-aws-dlm-role/compare/1.2.0...1.2.1) (2023-06-24)
 
 * Implementing Spacelift
