@@ -1,5 +1,7 @@
 
 
+## [1.1.1](https://github.com-personal/Surajtalwar/terraform-aws-dlm-role/compare/1.1.0...1.1.1) (2023-06-24)
+
 ## 1.1.0 (2023-06-14)
 
 
